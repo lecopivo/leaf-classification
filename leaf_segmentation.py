@@ -19,14 +19,15 @@ from skimage.segmentation import random_walker
 from matplotlib import collections  as mc
 import math
 
-data_dir = "/home/lecopivo/Documents/leafs/data/leaf scans US_2020-07-21/tree5"
+data_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "data")
+tree_dir = os.path.join("leaf scans US_2020-07-21", "tree5")
 img_name = "7_21_20_5_5t0001.jpg"
 
 # prepare some plotting shenanigans
 f, axarr = plt.subplots(2,4)
 
 # full image path
-filename = os.path.join(data_dir, img_name)
+filename = os.path.join(data_dir, tree_dir, img_name)
 
 # load image into a array of numbers
 cimg = io.imread(filename)
